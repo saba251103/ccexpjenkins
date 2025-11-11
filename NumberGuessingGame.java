@@ -1,28 +1,22 @@
-import java.util.Scanner;
 import java.util.Random;
 
 public class NumberGuessingGame {
 
     public static void main(String[] args) {
-        
-        Scanner sc = new Scanner(System.in);
+
         Random rand = new Random();
 
-        int numberToGuess = rand.nextInt(10) + 1;   // random number between 1–10
-        int userGuess = 0;
+        int numberToGuess = rand.nextInt(10) + 1;  // 1-10
+        int autoGuess = rand.nextInt(10) + 1;      // Jenkins auto guess
 
-        System.out.println("=== NUMBER GUESSING GAME ===");
-        System.out.println("I have picked a number between 1 and 10.");
-        System.out.print("Try to guess it: ");
+        System.out.println("=== NUMBER GUESSING GAME (AUTO MODE) ===");
+        System.out.println("Computer picked: " + numberToGuess);
+        System.out.println("Jenkins guessed: " + autoGuess);
 
-        userGuess = sc.nextInt();
-
-        if (userGuess == numberToGuess) {
-            System.out.println("🎉 Correct! You guessed the number!");
+        if (autoGuess == numberToGuess) {
+            System.out.println("✅ Jenkins guessed correctly!");
         } else {
-            System.out.println("❌ Wrong! The number was: " + numberToGuess);
+            System.out.println("❌ Jenkins guessed wrong!");
         }
-
-        sc.close();
     }
 }
